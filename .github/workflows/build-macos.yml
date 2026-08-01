@@ -70,13 +70,11 @@ jobs:
           set -euo pipefail
           bundle_root="target/${{ matrix.target }}/release/bundle"
           dmg_path="$(find "$bundle_root/dmg" -maxdepth 1 -type f -name '*.dmg' -print -quit)"
-          app_path="$(find "$bundle_root/macos" -maxdepth 1 -type d -name '*.app' -print -quit)"
 
           test -n "$dmg_path"
-          test -n "$app_path"
           hdiutil verify "$dmg_path"
 
-          main_binary="$app_path/Contents/MacOS/clash-verge"
+          main_binary="target/${{ matrix.target }}/release/clash-verge"
           test -f "$main_binary"
           binary_archs="$(lipo -archs "$main_binary")"
           echo "Main binary architectures: $binary_archs"
