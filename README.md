@@ -6,6 +6,7 @@ Mlsud Xns 是基于 Clash Verge Rev 2.5.2 定制的桌面代理客户端。
 
 安装包发布在本仓库的 Releases 页面：
 
+- Windows x64：适用于主流 64 位 Windows 电脑。
 - Apple Silicon：适用于采用 Apple M 系列芯片的 Mac。
 - Intel：适用于采用 Intel 处理器的 Mac。
 
